@@ -3,6 +3,7 @@ import { useGSAP } from '@gsap/react';
 import { heroVideo, smallHeroVideo } from '../utils';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import { animateWithGsap } from '../utils/animations';
 
 const Hero = () => {
   const [videoSrc, setVideoSrc] = useState(
@@ -18,12 +19,12 @@ const Hero = () => {
   };
 
   useGSAP(() => {
-    gsap.to('#hero', {
+    animateWithGsap('#hero', {
       opacity: 1,
       delay: 2,
     });
 
-    gsap.to('#cta', {
+    animateWithGsap('#cta', {
       opacity: 1,
       y: 0,
       delay: 2,
